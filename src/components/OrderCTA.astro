@@ -1,0 +1,105 @@
+---
+const IG_URL = 'https://www.instagram.com/glowbyliz.rd/';
+
+const steps = [
+  {
+    title: 'Mira nuestros productos',
+    text: 'Revisa el catálogo de arriba y/o nuestras publicaciones en instagram.',
+  },
+  {
+    title: 'Escríbenos por DM',
+    text: 'Mándanos mensaje a @glowbyliz.rd contándonos qué producto quieres.',
+  },
+  {
+    title: 'Coordinamos la entrega',
+    text: 'Confirmamos disponibilidad, pago y forma de entrega contigo.',
+  },
+];
+---
+
+<section class="order" id="pedidos">
+  <div class="container order-inner">
+    <div class="order-copy">
+      <p class="eyebrow">Cómo pedir</p>
+      <h2>Todo se coordina por Instagram</h2>
+
+      <ol class="steps">
+        {
+          steps.map((s) => (
+            <li>
+              <span class="step-mark" aria-hidden="true"></span>
+              <div>
+                <strong>{s.title}</strong>
+                <p>{s.text}</p>
+              </div>
+            </li>
+          ))
+        }
+      </ol>
+
+      <a href={IG_URL} target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+        Ir a @glowbyliz.rd
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .order {
+    background: var(--cream);
+    padding: 70px 0 80px;
+  }
+
+  .order-inner {
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .order h2 {
+    margin-top: 8px;
+    font-size: clamp(1.7rem, 3.2vw, 2.3rem);
+    color: var(--plum);
+  }
+
+  .steps {
+    list-style: none;
+    margin: 34px 0 36px;
+    padding: 0;
+    text-align: left;
+    display: grid;
+    gap: 20px;
+  }
+
+  .steps li {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    background: var(--white);
+    border-radius: var(--radius-md);
+    padding: 18px 20px;
+    box-shadow: 0 8px 20px -14px rgba(58, 10, 30, 0.35);
+  }
+
+  .step-mark {
+    flex-shrink: 0;
+    width: 12px;
+    height: 12px;
+    margin-top: 6px;
+    border-radius: 50%;
+    background: var(--lime);
+  }
+
+  .steps strong {
+    font-family: var(--font-display);
+    color: var(--plum);
+    font-size: 1.05rem;
+  }
+
+  .steps p {
+    margin-top: 4px;
+    color: #5c2338;
+    line-height: 1.5;
+    font-size: 0.96rem;
+  }
+</style>

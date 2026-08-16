@@ -1,0 +1,52 @@
+---
+interface Props {
+  flip?: boolean;
+  fromColor?: string;
+  toColor?: string;
+}
+
+const { flip = false, fromColor = '#FFEAF2', toColor = '#FFF6F9' } = Astro.props;
+---
+
+<div class="drip-divider" class:list={{ flip }} aria-hidden="true">
+  <svg viewBox="0 0 1200 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M0,0 L1200,0 L1200,40
+         C1150,40 1130,80 1080,80
+         C1030,80 1020,45 970,45
+         C920,45 910,72 860,72
+         C810,72 800,50 750,50
+         C700,50 690,85 640,85
+         C590,85 580,42 530,42
+         C480,42 470,68 420,68
+         C370,68 360,48 310,48
+         C260,48 250,78 200,78
+         C150,78 140,44 90,44
+         C60,44 30,60 0,55 Z"
+      fill={toColor}
+    ></path>
+  </svg>
+</div>
+
+<style define:vars={{ fromColor }}>
+  .drip-divider {
+    line-height: 0;
+    background: var(--fromColor);
+  }
+
+  .drip-divider.flip {
+    transform: scaleY(-1);
+  }
+
+  .drip-divider svg {
+    width: 100%;
+    height: 60px;
+    display: block;
+  }
+
+  @media (max-width: 640px) {
+    .drip-divider svg {
+      height: 36px;
+    }
+  }
+</style>

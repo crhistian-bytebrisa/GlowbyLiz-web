@@ -1,0 +1,153 @@
+---
+const products = [
+  { src: '/images/1.jpeg', alt: 'Meike Glamour Fat Oil Lip Drip, varios tonos' },
+  { src: '/images/2.jpeg', alt: 'Rhode Peptide Lip Tint, varios tonos' },
+  { src: '/images/3.jpeg', alt: 'Febble Hydration Lip Butter Balm, varios tonos' },
+  { src: '/images/4.jpeg', alt: 'Gisou Honey Infused Lip Oil, varios tonos' },
+  { src: '/images/5.jpeg', alt: 'Rhode lip balm en stick, varios tonos' },
+  { src: '/images/6.jpeg', alt: 'Benefit Benetint Gulf Girl' },
+  { src: '/images/7.jpeg', alt: 'KIKO Milano 3D Hydra Lipgloss, tonos 17, 20 y 22' },
+];
+---
+
+<section class="gallery" id="productos">
+  <div class="container">
+    <p class="eyebrow center">Disponible ahora</p>
+    <h2 class="gallery-title">Nuestro catálogo</h2>
+    <p class="gallery-sub">
+      Esto es lo que tenemos en tienda esta semana. Escríbenos por Instagram
+      para confirmar disponibilidad y coordinar tu pedido.
+    </p>
+
+    <div class="grid">
+      {
+        products.map((p) => (
+          <figure class="card">
+            <img src={p.src} alt={p.alt} loading="lazy" />
+          </figure>
+        ))
+      }
+    </div>
+
+    <div class="gallery-cta">
+      <a
+        href="https://www.instagram.com/glowbyliz.rd/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-primary"
+      >
+        Preguntar disponibilidad
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .gallery {
+    background: var(--blush);
+    padding: 60px 0 70px;
+  }
+
+  .center {
+    text-align: center;
+    display: block;
+  }
+
+  .gallery-title {
+    text-align: center;
+    margin-top: 8px;
+    font-size: clamp(1.8rem, 3.4vw, 2.4rem);
+    color: var(--plum);
+  }
+
+  .gallery-sub {
+    text-align: center;
+    max-width: 52ch;
+    margin: 16px auto 0;
+    color: #5c2338;
+    line-height: 1.6;
+  }
+
+  .grid {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+  }
+
+  .grid .card:nth-child(1) {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+  .grid .card:nth-child(5) {
+    grid-column: span 2;
+  }
+
+  .card {
+    margin: 0;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    background: var(--white);
+    transform: rotate(0deg);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .card:nth-child(odd) {
+    transform: rotate(-1.4deg);
+  }
+
+  .card:nth-child(even) {
+    transform: rotate(1.4deg);
+  }
+
+  .card:hover {
+    transform: scale(1.02) rotate(0deg);
+    box-shadow: 0 18px 34px -12px rgba(58, 10, 30, 0.35);
+    z-index: 2;
+  }
+
+  .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+  }
+
+  .grid .card:nth-child(1) img,
+  .grid .card:nth-child(5) img {
+    aspect-ratio: auto;
+    height: 100%;
+  }
+
+  .gallery-cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 44px;
+  }
+
+  @media (max-width: 900px) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .grid .card:nth-child(1) {
+      grid-column: span 2;
+      grid-row: span 1;
+    }
+    .grid .card:nth-child(1) img,
+    .grid .card:nth-child(5) img {
+      aspect-ratio: 4 / 3;
+    }
+    .grid .card:nth-child(5) {
+      grid-column: span 2;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+  }
+</style>

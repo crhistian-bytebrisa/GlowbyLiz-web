@@ -1,0 +1,65 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <img src="/images/8.jpeg" alt="Glow by Liz RD" class="footer-logo" />
+    <p class="footer-brand">glowbyliz<span>.rd</span> · Cosméticos & más</p>
+    <a href="https://www.instagram.com/glowbyliz.rd/" target="_blank" rel="noopener noreferrer">
+      @glowbyliz.rd
+    </a>
+    <p class="footer-copy">© {year} Glow by Liz. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--plum);
+    color: #ffd9e6;
+    padding: 40px 0 32px;
+    text-align: center;
+  }
+
+  .footer-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .footer-logo {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 6px;
+  }
+
+  .footer-brand {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--white);
+    font-size: 1.05rem;
+  }
+
+  .footer-brand span {
+    color: var(--lime);
+  }
+
+  .site-footer a {
+    text-decoration: none;
+    color: #ffb3cf;
+    font-weight: 600;
+  }
+
+  .site-footer a:hover {
+    color: var(--lime);
+  }
+
+  .footer-copy {
+    margin-top: 10px;
+    font-size: 0.8rem;
+    color: #d78ba6;
+  }
+</style>

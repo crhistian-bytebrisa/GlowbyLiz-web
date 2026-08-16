@@ -1,0 +1,141 @@
+---
+const IG_URL = 'https://www.instagram.com/glowbyliz.rd/';
+---
+
+<section class="hero" id="top">
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <p class="eyebrow">Cosméticos & más · Santo Domingo</p>
+      <h1>
+        Labios con <span class="highlight">glow</span>,<br />
+        pedidos por Instagram
+      </h1>
+      <p class="hero-text">
+        Lip oils, lip tints y lip gloss de las marcas que están en tendencia,
+        curados a mano por Liz. Aquí ves lo que tenemos disponible ahora mismo.
+      </p>
+      <div class="hero-actions">
+        <a href={IG_URL} target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          Pedir por Instagram
+        </a>
+        <a href="#productos" class="btn btn-outline">Ver catálogo</a>
+      </div>
+    </div>
+
+    <div class="hero-visual" aria-hidden="true">
+      <img src="/images/1.jpeg" alt="" class="hero-img hero-img-main" />
+      <img src="/images/4.jpeg" alt="" class="hero-img hero-img-float" />
+      <span class="hero-blob"></span>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    background: radial-gradient(circle at 15% 20%, #ffd7e6 0%, var(--blush) 45%, var(--cream) 100%);
+    padding: 64px 0 40px;
+  }
+
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(2.4rem, 4.6vw, 3.6rem);
+    color: var(--plum);
+    margin-top: 10px;
+  }
+
+  .highlight {
+    color: var(--cherry);
+    position: relative;
+  }
+
+  .hero-text {
+    margin-top: 20px;
+    font-size: 1.08rem;
+    line-height: 1.6;
+    color: #5c2338;
+    max-width: 46ch;
+  }
+
+  .hero-actions {
+    margin-top: 30px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .hero-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 420px;
+  }
+
+  .hero-blob {
+    position: absolute;
+    width: 340px;
+    height: 340px;
+    border-radius: 50%;
+    background: var(--pink);
+    opacity: 0.18;
+    filter: blur(10px);
+    z-index: 0;
+  }
+
+  .hero-img {
+    position: relative;
+    z-index: 1;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    object-fit: cover;
+  }
+
+  .hero-img-main {
+    width: 320px;
+    height: 400px;
+    transform: rotate(-4deg);
+  }
+
+  .hero-img-float {
+    position: absolute;
+    width: 190px;
+    height: 190px;
+    right: -10px;
+    bottom: -20px;
+    transform: rotate(8deg);
+    border: 6px solid var(--cream);
+    z-index: 2;
+  }
+
+  @media (max-width: 900px) {
+    .hero-inner {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+    .hero-text {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-actions {
+      justify-content: center;
+    }
+    .hero-visual {
+      min-height: 340px;
+      margin-top: 12px;
+    }
+    .hero-img-main {
+      width: 250px;
+      height: 320px;
+    }
+    .hero-img-float {
+      width: 140px;
+      height: 140px;
+    }
+  }
+</style>
