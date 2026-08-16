@@ -27,6 +27,8 @@ jobs:
 
       - name: Instalar, construir y subir el sitio
         uses: withastro/action@v3
+        with:
+          node-version: 22
         # Este action detecta Astro, corre "npm ci" + "npm run build"
         # y sube el contenido de dist/ como artefacto listo para Pages.
 
