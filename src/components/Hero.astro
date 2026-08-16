@@ -1,5 +1,6 @@
 ---
 const IG_URL = 'https://www.instagram.com/glowbyliz.rd/';
+const BASE = import.meta.env.BASE_URL;
 ---
 
 <section class="hero" id="top">
@@ -23,8 +24,8 @@ const IG_URL = 'https://www.instagram.com/glowbyliz.rd/';
     </div>
 
     <div class="hero-visual" aria-hidden="true">
-      <img src="/images/1.jpeg" alt="" class="hero-img hero-img-main" />
-      <img src="/images/4.jpeg" alt="" class="hero-img hero-img-float" />
+      <img src={`${BASE}images/1.jpeg`} alt="" class="hero-img hero-img-main" />
+      <img src={`${BASE}images/4.jpeg`} alt="" class="hero-img hero-img-float" />
       <span class="hero-blob"></span>
     </div>
   </div>

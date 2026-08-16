@@ -1,10 +1,11 @@
 ---
 const year = new Date().getFullYear();
+const logoSrc = `${import.meta.env.BASE_URL}images/8.jpeg`;
 ---
 
 <footer class="site-footer">
   <div class="container footer-inner">
-    <img src="/images/8.jpeg" alt="Glow by Liz RD" class="footer-logo" />
+    <img src={logoSrc} alt="Glow by Liz RD" class="footer-logo" />
     <p class="footer-brand">glowbyliz<span>.rd</span> · Cosméticos & más</p>
     <a href="https://www.instagram.com/glowbyliz.rd/" target="_blank" rel="noopener noreferrer">
       @glowbyliz.rd
