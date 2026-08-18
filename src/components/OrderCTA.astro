@@ -1,14 +1,15 @@
 ---
 const IG_URL = 'https://www.instagram.com/glowbyliz.rd/';
-
+const WA_MSG = 'Buenas Liz, vi un producto que me intereso en tu web, me gustaria saber si aun quedan.';
+const WA_URL = `https://wa.me/18298217111?text=${encodeURIComponent(WA_MSG)}`; 
 const steps = [
   {
     title: 'Elige tu producto',
     text: 'Revisa el catálogo de arriba y/o nuestro perfil en instagram.',
   },
   {
-    title: 'Escríbenos por DM',
-    text: 'Mándanos mensaje a @glowbyliz.rd contándonos qué producto quieres.',
+    title: 'Escríbenos por DM o Whatsapp',
+    text: 'Mándanos mensaje a @glowbyliz.rd contándonos qué producto quieres o usa el boton de la web para enviarnos un mensaje',
   },
   {
     title: 'Coordinamos la entrega',
@@ -36,10 +37,14 @@ const steps = [
           ))
         }
       </ol>
-
-      <a href={IG_URL} target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-        Ir a @glowbyliz.rd
-      </a>
+      <div class="hero-actions">
+        <a href={IG_URL} target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          Pedir por Instagram
+        </a>
+        <a href={WA_URL} target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          Pedir por Whatsapp
+        </a>
+      </div>
     </div>
   </div>
 </section>
@@ -60,6 +65,14 @@ const steps = [
     margin-top: 8px;
     font-size: clamp(1.7rem, 3.2vw, 2.3rem);
     color: var(--plum);
+  }
+
+  .hero-actions {
+    margin-top: 30px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .steps {

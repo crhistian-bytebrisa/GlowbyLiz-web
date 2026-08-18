@@ -1,5 +1,7 @@
 ---
 const IG_URL = 'https://www.instagram.com/glowbyliz.rd/';
+const WA_MSG = `Buenas Liz, vi un producto que me intereso en tu web, me gustaria saber si aun quedan.`;
+const WA_URL = `https://wa.me/18298217111?text=${encodeURIComponent(WA_MSG)}`; 
 const BASE = import.meta.env.BASE_URL;
 ---
 
@@ -9,7 +11,7 @@ const BASE = import.meta.env.BASE_URL;
       <p class="eyebrow">Cosméticos & más · Santo Domingo</p>
       <h1>
         Labios con <span class="highlight">glow</span>,<br />
-        pedidos por Instagram
+        pedidos por Instagram o Whatsapp
       </h1>
       <p class="hero-text">
         Lip oils, lip tints y lip gloss de las marcas que están en tendencia. Aquí ves lo que tenemos disponible ahora mismo.
@@ -17,6 +19,9 @@ const BASE = import.meta.env.BASE_URL;
       <div class="hero-actions">
         <a href={IG_URL} target="_blank" rel="noopener noreferrer" class="btn btn-primary">
           Pedir por Instagram
+        </a>
+        <a href={WA_URL} target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          Pedir por Whatsapp
         </a>
         <a href="#productos" class="btn btn-outline">Ver catálogo</a>
       </div>
